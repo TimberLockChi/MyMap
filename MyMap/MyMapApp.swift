@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct MyMapApp: App {
+    
+    //APP初始化时创建数据
+    @StateObject private var vm = LocationViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LocationsView()
+                .environmentObject(vm)//任何子视图都可以获取数据变更
         }
     }
 }
