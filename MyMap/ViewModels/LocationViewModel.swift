@@ -27,6 +27,9 @@ class LocationViewModel:ObservableObject{
     //是否展示位置列表
     @Published var showLocationList:Bool = false
     
+    //通过sheet展示的位置详情信息
+    @Published var sheetLocation: Location? = nil
+    
     init() {
         let locations = LocationsDataService.locations
         self.locations = locations
